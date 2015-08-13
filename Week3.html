@@ -1,0 +1,321 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Mobile Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js">
+	</script>
+	<style>
+.content div div p {
+background-color: #ccc;
+height: 50px;
+border: 1px solid #333;
+margin: 0px;
+}
+</style>
+	</head> 
+
+<body>  
+<!-- begin first page-->
+	<div id="page1" data-role="page">	
+<!-- Header -->
+		<header data-role="header"><h1>My First Page</h1>
+<!-- Navigation Bar -->
+			<nav data-role="navbar">
+				<ul>
+					<a href="#" class="ui-btn-active">First</a>
+					<a href="#">Second</a>
+					<a href="#">Third</a>
+					<a href="#">Fourth</a>
+					<a href="#">Fifth</a>
+				</ul>
+			</nav>
+		</header>	
+<!-- Page contents -->
+		<div data-role="content" class="content">													
+			<p>First Page!</p>
+<!-- Go back one page -->
+			<p><a href="#" data-rel="back" data-transition="turn">BACK</a></p>
+<!-- link to new page -->
+			<p><a href="#page2" data-transition="flip">Go to Second Page</a></p>	
+<!-- link to page as dialog -->
+			<p><a href="#page2" data-rel="dialog">Open Page 2 as a Dialog</a></p>
+			<p><a href="#page3" data-transition="pop">Go to Third Page</a></p>
+<!-- Link to external Page -->
+			<p><a href="external.html" rel="external">Go to external page</a></p>
+			
+<!-- Checkboxes -->
+			<h3>Checkboxes and Radio Buttons</h3>
+			<form id="myform" action="formprocessor.php" method="post">
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<legend>Filter Restaurants By:</legend>
+						<input type="checkbox" name="checkbox-french" id="checkbox-french">
+						<label for="checkbox-french">French</label>
+						<input type="checkbox" name="checkbox-italian" id="checkbox-italian">
+						<label for="checkbox-italian">Italian</label>
+						<input type="checkbox" name="checkbox-greek" id="checkbox-greek">
+						<label for="checkbox-greek">Greek</label>
+					</fieldset>
+					
+<!-- Radio Buttons -->
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<legend>Select a Language:</legend>
+						<input type="radio" name="radio-language" id="radio-french">
+						<label for="radio-french">French</label>
+						<input type="radio" name="radio-language" id="radio-italian"
+							checked="checked">
+						<label for="radio-italian">Italian</label>
+						<input type="radio" name="radio-language" id="radio-greek">
+						<label for="radio-greek">Greek</label>
+					</fieldset>
+				</div>
+			</form>
+		</div>
+		
+<!-- Flip Toggle -->
+		<form id="myform" action="formprocessor.php" method="post">
+			<div data-role="fieldcontain">
+				<label for="slider-music">Ambient Music:</label>
+				<select name="slider-music" id="slider-music" data-role="slider">
+					<option value="on">On</option>
+					<option value="off">Off</option>
+				</select>
+			</div>
+		</form>
+		
+<!-- Slider -->
+			<p><label for="slider-fill">Slider:</label>
+			<input type="range" name="slider-fill" id="slider-fill" value="500" min="0" max="1000" data-highlight="true">
+			<div class="content" data-role="content">
+				<h3>Buttons</h3>
+				<a href="#" data-role="button">Link-based button</a>
+				<input type="submit" value="submit" data-inline="true">
+				<input type="reset" value="reset" data-inline="true">
+			</div>
+			<h3>Control Group Buttons</h3>
+
+<!-- Native Select Menu -->
+			<h3>Native Select Menu Demonstration</h3>
+			<form id="myform" action="formprocessor.php" method="post">
+				<div data-role="fieldcontain">
+					<label for="select-restaurants">Select Your Restaurants:</label>
+					<select id="select-restaurants" name="select-restaurants">
+						<option value="lecentral">Le Central</option>
+						<option value="bistrovandome">Bistro Vandome</option>
+						<option value="antoines">Antoine's</option>
+					</select>
+				</div>
+			</form>
+			
+<!-- Custom Select Menu -->
+			<h3>Select Menu Demonstration</h3>
+			<form id="myform" action="formprocessor.php" method="post">
+				<div data-role="fieldcontain">
+					<label for="select-restaurants">Select Your Restaurants:</label>
+					<select id="select-restaurants"
+						name="select-restaurants"
+						data-native-menu="false"
+						multiple="multiple">
+					<option value="choose" data-placeholder="true">Choose...</option>
+					<optgroup label="French">
+						<option value="lecentral">Le Central</option>
+						<option value="bistrovandome">Bistro Vandome</option>
+						<option value="antoines">Antoine's</option>
+					</optgroup>
+					<optgroup label="Cajun">
+						<option value="bayoubobs">Bayou Bob's</option>
+						<option value="pappadeaux" disabled="disabled">Pappadeaux</option>
+						<option value="luciles">Lucile's</option>
+					</optgroup>
+					</select>
+				</div>
+			</form>
+			
+<!-- Layout Grids -->
+			<h4>2 Colums</h4>
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><p>Block A</p></div>
+				<div class="ui-block-b"><p>Block B</p></div>
+			</div>
+			<h4>3 Columns</h4>
+				<div class="ui-grid-b">
+				<div class="ui-block-a"><p>Block A</p></div>
+				<div class="ui-block-b"><p>Block B</p></div>
+				<div class="ui-block-c"><p>Block C</p></div>
+			</div>
+			<h4>4 Columns</h4>
+				<div class="ui-grid-c">
+				<div class="ui-block-a"><p>Block A</p></div>
+				<div class="ui-block-b"><p>Block B</p></div>
+				<div class="ui-block-c"><p>Block C</p></div>
+				<div class="ui-block-d"><p>Block D</p></div>
+			</div>
+			<h4>5 Columns</h4>
+				<div class="ui-grid-d">
+				<div class="ui-block-a"><p>Block A</p></div>
+				<div class="ui-block-b"><p>Block B</p></div>
+				<div class="ui-block-c"><p>Block C</p></div>
+				<div class="ui-block-d"><p>Block D</p></div>
+				<div class="ui-block-e"><p>Block E</p></div>
+			</div>
+			<h4>2 Rows of 3 Columns</h4>
+				<div class="ui-grid-d">
+				<div class="ui-block-a"><p>Block A</p></div>
+				<div class="ui-block-b"><p>Block B</p></div>
+				<div class="ui-block-c"><p>Block C</p></div>
+				<div class="ui-block-a"><p>Block A</p></div>
+				<div class="ui-block-b"><p>Block B</p></div>
+				<div class="ui-block-c"><p>Block C</p></div>
+			</div>
+			
+<!-- Vertical Grouped Buttons with icons different positions-->
+			<div data-role="controlgroup">
+				<a href="#" data-role="button" data-icon="check" data-iconpos="left">Yes</a>
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="right">No</a>
+				<a href="#" data-role="button" data-icon="back" data-iconpos="bottom">Cancel</a>
+			</div>
+			
+<!-- Horizontal Grouped Buttons with icons-->
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#" data-role="button" data-icon="check">Yes</a>
+				<a href="#" data-role="button" data-icon="delete">No</a>
+				<a href="#" data-role="button" data-icon="back">Cancel</a>
+			</div>
+			
+<!-- Lists -->
+<!-- Unordered list, basic view, with dividers -->
+			<h3>Unordered List</h3>
+			<ul data-role="listview">
+				<li data-role="divider">Things</li>
+				<li>Item1</li>
+				<li>Item2</li>
+				<li>Item3</li>
+				<li data-role="divider">Stuff</li>
+				<li>ItemA</li>
+				<li>ItemB</li>
+				<li>ItemC</li>
+			</ul>
+			
+<!-- Ordered list, with buttons, with dividers, with inset, with auto-fill filter, with counts -->
+			<h3>Ordered List</h3>
+			<ol data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Select Item">
+				<li data-role="divider"><h6>Things</h6><span class="ui-li-count">10</span></li>
+				<li><a href="#">Item1</a><span class="ui-li-count">8</span></li>
+				<li><a href="#">Item2</a></li>
+				<li><a href="#">Item3</a></li>
+				<li data-role="divider"><h6>Stuff</h6></li>
+				<li><a href="#">ItemA</a></li>
+				<li><a href="#">ItemB</a></li>
+				<li><a href="#">ItemC</a></li>
+			</ol>
+			<h3>Nested List With Splits, Icons, Thumbnails and Count Bubbles</h3>
+				<ul data-role="listview">
+<!-- Count Bubble -->
+					<li><a href="#">Restaurants</a><span class="ui-li-count">9</span>	
+					<ul>
+					<li>
+<!-- Icon (not working properly)-->					
+						<a href="#"> 
+							<img src="C:\Users\Michael\Google Drive\University 2015\2015\Trimester 2\SIT313 - Mobile Computing\French Flag.jpg"    
+								alt="French flag icon"
+								class="ui-li-icon">
+							French <span class="ui-li-count">3</span>
+						</a>
+						<ul>
+							<li>
+								<a href="lecentral.html">
+									<img src="C:\Users\Michael\Google Drive\University 2015\2015\Trimester 2\SIT313 - Mobile Computing\French Flag.jpg" alt="Le Central logo"> <!-- Thumbnail -->
+									Le Central
+								</a>
+								<a href="reservations.php?restaurant=403">Make Reservations</a>
+							</li>
+							<li>
+								<a href="bistrovandome.html">
+									<img src="../images/logo-generic.png" alt="Bistro Vandome logo">
+									Bistro Vandome
+								</a>
+								<a href="reservations.php?restaurant=404">Make Reservations
+								</a>
+								</li>
+								<li>
+									<a href="antoines.html">
+										<img src="../images/logo-generic.png" alt="Antoine's logo">
+										Antoine's
+									</a>
+									<a href="reservations.php?restaurant=405">Make Reservations</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<img src="C:\Users\Michael\Google Drive\University 2015\2015\Trimester 2\SIT313 - Mobile Computing\Cajun Flag.jpg"
+									alt="Cajun flag icon"
+									class="ui-li-icon">
+								Cajun
+							</a>
+							<ul>
+								<li>Bayou Bob's</li>
+								<li>Pappadeaux</li>
+								<li>Lucile's</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<img src="C:\Users\Michael\Google Drive\University 2015\2015\Trimester 2\SIT313 - Mobile Computing\American Flag.png"
+									alt="American flag icon"
+									class="ui-li-icon">
+								American
+							</a>
+							<ul>
+								<li>Dixon's</li>
+								<li>Vesta Dipping Grill</li>
+								<li>Steuben's</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+<!-- footer -->
+		<footer data-role="footer"><h1>&copy Michael Smith</h1></footer>							
+	</div>																						
+<!-- end first page -->
+	
+	
+	 
+<!-- begin second page-->
+	<div id="page2" data-role="page">															
+		<header data-role="header"><h1>My Second Page</h1></header>
+		<div data-role="content" class="content">
+			<p>Second Page!</p>
+			<p><a href="#" data-rel="back" data-transition="turn">BACK</a></p>
+			<p><a href="#page1" data-transition="turn">Go back to First Page</a></p>
+			<p><a href="#page3" data-transition="flow">Go to Third Page</a></p>
+			<p><a href="external.html" rel="external">Go to external page</a></p>
+		</div>
+		<footer data-role="footer"><h1>&copy Michael Smith</h1></footer>
+	</div>																						
+<!-- end second page-->
+	
+<!-- begin third page-->
+	<div id="page3" data-role="page">															
+		<header data-role="header"><h1>My Third Page</h1></header>
+		<div data-role="content" class="content">
+			<p>Third Page!</p>
+			<p><a href="#" data-rel="back" data-transition="turn">BACK</a></p>
+			<p><a href="#page1" data-transition="slidedown">Go back to First Page</a></p>
+			<p><a href="#page2" data-transition="none">Go back to Second Page</a></p>
+			<p><a href="external.html" rel="external">Go to external page</a></p>					
+		</div>
+		<footer data-role="footer"><h1>&copy Michael Smith</h1></footer>
+	</div>																						
+<!-- end third page-->
+	
+	
+	
+</body>
+</html>
